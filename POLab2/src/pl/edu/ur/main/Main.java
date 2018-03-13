@@ -11,11 +11,16 @@ public class Main {
     /**
      * @param args the command line arguments
      */
+    
+     
     public static void main(String[] args) {
         
+        //Zadanie Domowe
+        // TODO zad 3, 4, 6, 7
+        7
+        Zadanie_domowe_z_dnia_14_03(); 
         
-        
-        double a = 3,b = 4,c = 2;
+        /*double a = 3,b = 4,c = 2;
         
         double delta=b*b-4*a*c;
         if(delta>0)
@@ -27,6 +32,7 @@ public class Main {
           System.out.println("X1"+x1);
           System.out.println("X1"+x2);
         }
+        */
         // TODO zad 3, 4, 6, 7
         /*for(int i=0;i!=0;i--)
         {
@@ -124,5 +130,152 @@ public class Main {
         }
       */
     }
+
+    private static void Zadanie_domowe_z_dnia_14_03() {
+        while(true)
+        {
+         Scanner odczyt;   
+         System.out.println("Podaj numer zadania");
+         odczyt =new Scanner(System.in);
+         int zadanie=odczyt.nextInt();
+         switch(zadanie)
+         {
+             case 3:
+             {
+                 int[] tablica=new int[10];
+                 for(int i=0;i<10;i++)
+                 {
+                     System.out.println("Podaj wartosc:");
+                     tablica[i]=odczyt.nextInt();
+                 }
+                //od 1 do n
+                 for(int i=0;i<10;i++)
+                 {
+                     System.out.println("Wartosci" + tablica[i]);
+                 }
+                //od n do 1
+                 for(int i=10;i!=0;i--)
+                 {
+                     System.out.println("Wartosci" + tablica[i]);
+                 }
+                 //od 1 do n  nieprzyste indeks
+                  for(int i=0;i<10;i++)
+                 {
+                     if(i%2!=0)
+                     System.out.println("Wartosci" + tablica[i]);
+                 }
+                  
+                 //od 1 do n  przyste indeks
+                 for(int i=0;i<10;i++)
+                 {
+                     if(i%2==0)
+                     System.out.println("Wartosci" + tablica[i]);
+                 }
+                 
+             }
+             break;
+             case 4:
+             {
+                 int[] tablica=new int[10];
+                 for(int i=0;i<10;i++)
+                 {
+                     System.out.println("Podaj wartosc:");
+                     tablica[i]=odczyt.nextInt();
+                 }
+                 
+                 
+                 int suma=0;
+                 for(int i=0;i<10;i++)
+                 {
+                     suma+=tablica[i];
+                 }
+                 System.out.println("Suma wartosci:" + suma);
+                 
+                 int iloczyn=1;
+                 for(int i=0;i<10;i++)
+                 {
+                     iloczyn*=tablica[i];
+                 }
+                 System.out.println("Iloczyn wartosci:" + iloczyn);
+                 
+                 int suma2=0;
+                 for(int i=0;i<10;i++)
+                 {
+                     suma2+=tablica[i];
+                 }
+                 System.out.println("Srednia wartosci:" + suma2/2);
+                 
+                 int wynik = tablica[0];
+                 for (int i=1; i<10; i++) {
+                  if (wynik > tablica[i]) 
+                  {
+                       wynik = tablica[i];
+                  }
+                 }
+                 System.out.println("Wartosc najwieksza wartosci:" + wynik);
+                 
+                 
+                 int wynik2 = tablica[0];
+                 for (int i=1; i<10; i++) {
+                  if (wynik2 < tablica[i]) 
+                  {
+                       wynik2 = tablica[i];
+                  }
+                 }
+                 System.out.println("Wartosc najwieksza wartosci:" + wynik2);
+                 
+                 
+                 
+             }
+             break;
+             case 6:
+             {
+                 while(true)
+                 {
+                    System.out.println("Podaj liczbę");
+                    if(odczyt.nextInt()<0)
+                    {
+                        break;
+                    }
+                 }
+             }
+             break;
+             case 7:
+             {
+                 System.out.println("Ile liczb chcesz wprowadzić:");
+                 int n=odczyt.nextInt();
+                 int[] tablica=new int[n];
+                 for(int i=0;i<n;i++)
+                 {
+                     System.out.println("Podaj wartosc:");
+                     tablica[i]=odczyt.nextInt();
+                 }
+                  b_sort(tablica);
+             }
+             break;
+         }
+         
+        }
+    }
+    
+    private static void b_sort(int tab[]){
+    int temp;
+    int zmiana = 1;
+    while(zmiana > 0){
+      zmiana = 0;
+          for(int i=0; i<tab.length-1; i++){
+          if(tab[i]>tab[i+1]){
+             temp = tab[i+1];
+             tab[i+1] = tab[i];
+             tab[i] = temp;
+             zmiana++;
+            }
+          }
+    }
+    for(int i=0; i<tab.length; i++){
+    System.out.print(tab[i]+" ");
+    }
+    }
+    
     
 }
